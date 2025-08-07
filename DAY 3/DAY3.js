@@ -12,6 +12,8 @@ marks[2]=99;
 
 console.log(marks);*/
 
+
+
 //3RD
 
 //array with loop
