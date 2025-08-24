@@ -1,30 +1,12 @@
-// const linearsearch = (num,target)=>{
-// for(let i = 0; i<num.length;i++){
-
-//     if(target===num[i]){
-//         return i;
-//     }
-// }
-// return -1;
-// }
-// console.log(linearsearch([4,5,6,7,0,1,2],6))
-
-// const alphabhet=(alpha,target)=>{
-//     for(let i =0;i<alpha.target;i++){
-//         if(target === alpha[i]){
-//             return i;
-//         }
-//     }
-// return 0;
-// }
-// console.log(alphabhet(["ISMAIL","HAIDER","ALI","HASSAN"],"ISMAIL"))
-
-const charx =(char,target)=>{
-for(let i=0; i<char.length;i++){
-if(target==char[i]){
-    return i;
+const bubblesort = (arr)=>{
+const n = arr.length
+for(let i = 0 ; i<n.length;i++){
+    for(j=0;j<n-i-1;j++){
+if(arr[j]>arr[j=1]){
+    [arr[j], arr[j+1]] = [arr[j+1],arr[j]]
 }
+    }
 }
-return 0;
+return arr;
 }
-console.log(charx("ismail","l"))
+console.log(bubblesort([3,4,64,64,67,456,323,9450]))
