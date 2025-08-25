@@ -1,41 +1,47 @@
-// – Compare
-// 	•	Linear Search → O(n)
-// 	•	Binary Search → O(log n)
-// 	•	Do same problem with both and compare efficiency.
-
-
-//binary search
-
-
-// let binarysearch = (num,target)=>{
-//     let start =0;
-//     let end =num.length-1;
-//     while(start<=end){
-//         let middle = Math.floor((start+end)/2);
-//         if(num[middle]===target){
-//             return middle;
-//         } else if(num[middle] < target){
-//             start = middle +1;
-//         } else {
-//             end = middle - 1;
+// const sum =(nums,target)=>{
+//  for (let i = 0; i < nums.length; i++) {
+//         if (target === nums[i]) {
+//             return i;
+//         }
+//          else if (nums[i] > target) {
+//             return nums[i] < target;
 //         }
 //     }
-// return -1;
+//     return -1;
+
 // }
-// console.log(binarysearch([2,4,7,10,15],10))
+// console.log(sum([1, 3, 5, 6], 5));  
+// console.log(sum([1, 3, 5, 7], 2));  
 
-//linear search
 
-// const linearsearch = (nums,target)=>{
-//     for(let i = 0 ; i<nums.length; i++){
-//         if(target ===nums[i]){
+// const  sum=(nums, target)=> {
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] === target) {
 //             return i;
 //         }
 //     }
-// return -1;
+//     return -1;
 // }
-// console.log(linearsearch([2,4,7,10,15],10))
+// console.log(sum([1, 3, 5, 6], 6)); 
+// console.log(sum([1, 3, 5, 6], 7));
 
 
-// Linear Search → O(n), checks each element one by one (slower for large arrays).
-// Binary Search → O(log n), cuts the array in half each step (much faster on sorted arrays).
+const x=(nums, target) =>{
+
+    for (let i = 0; i < nums.length; i++) {
+
+        if (target ===nums[i]) {
+            return i;
+        }
+        else if (target < nums[i]) {
+            return i;
+        }
+        else if (target > nums[i]) {
+            nums.push(target);
+        }
+    }
+    return -1
+}
+console.log(x([1, 3, 5, 6], 5))
+console.log(x([1, 3, 5, 6], 2));
+console.log(x([1, 3, 5, 6], 7));  
