@@ -1,25 +1,23 @@
-// linear search 
+// binary search
+const x = (nums,target)=>{
+    let start = 0;
+    let end = nums.length-1;
 
-// const x = (num,target)=>{
-// for(let i=0;i<num.length;i++){
-//     if(target===num[i]){
-//         return i;
-//     }
-// }
-// return -1;
-// }
-// console.log(x([3,4,2,5,2423,43],43))
+    while(start <=end){
+        let middle = Math.floor((start+end)/2);
 
-
-// const globallinearsearch = (num,target)=>{
-//     const result=[];
-//     for(let i=0; i<num.length;i++){
-// if(target===num[i]){
-//     result.push(i);
-// }
-//     }
-//     if(result.length===0) return -1;
-//     return result
-// }
-
-// console.log(globallinearsearch([2,4,5,6,4,6,0,3,4],4))
+        if(nums[middle]===target){
+            return middle;
+        } else if(nums[middle]<target){
+            start = middle + 1;
+        } else{
+            end = middle-1;
+        }
+    }
+    return -1;
+}
+// time complexity O(logn)
+//space complexity O(1)
+space
+console.log(x([-1,0,3,5,9,12],9))
+console.log(x([-1,0,3,5,9,12],99))
