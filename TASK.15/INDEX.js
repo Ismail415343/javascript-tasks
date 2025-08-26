@@ -1,28 +1,14 @@
-//global vs local scope
-
-// let global = "i am global";
-// function scp(){
-//     let local = "i am local"
-//     console.log(global)
-//     console.log(local)
-// }
-// scp();
-
-// console.log(global) // this is accessible because this is define outside the function
-// console.log(local) // this is only execute inside the function
-
-// task 
+//let, const, var inside loop
 
 
+for(var i =0 ;i< 3;i++){
+    console.log(i) 
+}
 
-// let a =12
-// function num(){
-//     let b = 20 
-//     console.log(a)
-//     console.log(b)
-// }
-// num(    )
+for(let j = 0; j< 6 ;j++){
+    console.log(i)
+}
 
-// console.log(a)
-// console.log(b)
-//the line 27 give error because the b is declared inside the loop which is local scope and the a is executed because it is global
+for(const k=0; k<9;k++){
+    console.log(i)
+}
