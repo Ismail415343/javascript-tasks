@@ -1,14 +1,25 @@
-//let, const, var inside loop
+//-Block Scope (let & const) vs Function Scope (var)
 
 
-for(var i =0 ;i< 3;i++){
-    console.log(i) 
-}
 
-for(let j = 0; j< 6 ;j++){
-    console.log(i)
-}
+// if(true){
+//     var x = 70
+// let y = 19
+// const z = 90
+// }
+// console.log(x) only x is accessible
+// console.log(y)
+// console.log(z) 
 
-for(const k=0; k<9;k++){
-    console.log(i)
-}
+
+//lets execute all with the use of function
+
+// let x = 20
+// const y = 30
+// function xrp(){
+//     var z = 10
+//     console.log(z) this is only executed inside the function because this is the block scope
+// }
+// xrp();
+// console.log(x)
+// console.log(y)
