@@ -1,30 +1,56 @@
-// // Using var
-// for (var i = 0; i < 3; i++) {
-//   console.log("Inside for (var):", i);
+//hoisting
+
+// function one(){
+//     let username="ismail";
+
+//     function two(){
+//         const app = "vs code"
+//         console.log(username); //using parent child relation
+//         console.log(app)  //
+        
+//     }
+// // console.log(app)
+//  two()
 // }
-// console.log("Outside for (var):", i); 
-// //the var is accessible inside or outside the loop because this is the global 
+// one()
 
 
-// //Using let
-// for (let j = 0; j < 3; j++) {
-//   console.log("Inside for (let):", j);
+//let hoisting
+
+// console.log(b);  //ReferenceError 
+// let b = 20; //not executed
+
+// console.log(b); 
+
+// var hoisting
+
+// // console.log(a); //undefined
+// var a = 30;
+// console.log(a); //executed 
+
+//const hoisting
+
+// // console.log(c)
+// const c=40;
+// console.log(40)
+
+
+// function hoisting
+
+
+// hello();
+
+// function hello(){
+//      let x = "hello world";
+//      console.log(x)
 // }
-// console.log("Outside for (let):", j); 
-// //the let is only executed inside the loop because this is the block/local scope
 
 
-// // Using const
-// for (const k = 0; k < 3; k++) {
-//   console.log("Inside for (const):", k);
+// hi()
+
+// let hi = ()=>{
+//     let x =23;
+//     console.log(x)
 // }
-// // the loop not runs because the constant variable could not change once it declared so the output is only 0
 
-
-//the const loop is only executed in for of loop
-
-const arr = [10,20,30]
-for(const number of arr){
-    console.log(number) //this one is executed
-}
-console.log(number)//this is not gonna execute because this is the local only the number inside the for off loop is executed
+//the only normal funstion is executedd before intiallization not the arrow function
