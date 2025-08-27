@@ -1,49 +1,66 @@
-//promise resolve means promise fulfilled reject means the promise is not fulfulled, pending means the promise is on pending
 
-// let promise = new Promise( (resolve,reject)=>{
-// console.log("promise");
-// //resolve('sucess')
-// //reject("error")
+//promise chaining
 
-// })
-
-// function getData(dataId, getNextData) {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       // console.log("data", dataId);
-//       // resolve("success");
-//       reject("error");
-
-//       if (getNextData) {
-//         getNextData();
-//       }
-//     }, 5000);
-//   });
+// function async1 ()  {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             console.log("data1")
+//             resolve("sucess")
+//         }, 3000);
+//     })
 // }
 
-// in promises if we want to do some work after our promise is got fulfilled we use .then and to do some work after reject like error we use .catch 
-
-// const getPromise =()=>{
-//     return new Promise((resolve, reject) => {
-//         console.log("i am promise")
-//        // resolve("sucess")
-//        reject("rejected")
+// function async2 ()  {
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             console.log("data2")
+//             resolve("sucess")
+//         }, 5000);
 //     })
-//  }
+// }
 
-
-// let promise = getPromise();
-// promise.catch((err)=>{
-//     console.log("this will not runs ",err)
+// console.log("fetching data1")
+// let promise1 = new async1();
+// promise1.then((res)=>{
+//     console.log(res)
 // })
 
-const getPromise=()=>{
+
+// console.log("fetching data2")
+// let promise2 = new async2();
+// promise2.then((res)=>{
+//     console.log(res)
+// })
+
+
+
+
+function async1 ()  {
     return new Promise((resolve,reject)=>{
-        console.log("i am promise")
-        resolve("no errors")
-    }
-)}
-let promise = getPromise();
-promise.then((res)=>{
-console.log("runs sucessfully",res)
+        setTimeout(() => {
+            console.log("data1")
+            resolve("sucess")
+        }, 3000);
+    })
+}
+
+function async2 ()  {
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log("data2")
+            resolve("sucess")
+        }, 5000);
+    })
+}
+
+console.log("fetching data1...")
+let promise1 = new async1();
+promise1.then((res)=>{
+    console.log(res)
+    console.log("fetching data2...")
+    let promise2 = new async2();
+    promise2.then((res)=>{
+    console.log(res)
+    })
 })
+
