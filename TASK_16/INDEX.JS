@@ -1,52 +1,49 @@
-//synchronus line by line
+//promise resolve means promise fulfilled reject means the promise is not fulfulled, pending means the promise is on pending
 
-// console.log("1")
-// console.log("2")
-// console.log("3")
+// let promise = new Promise( (resolve,reject)=>{
+// console.log("promise");
+// //resolve('sucess')
+// //reject("error")
 
-//asynchronus
+// })
 
-// function hello(){
-//     console.log("hello")
+// function getData(dataId, getNextData) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       // console.log("data", dataId);
+//       // resolve("success");
+//       reject("error");
+
+//       if (getNextData) {
+//         getNextData();
+//       }
+//     }, 5000);
+//   });
 // }
 
+// in promises if we want to do some work after our promise is got fulfilled we use .then and to do some work after reject like error we use .catch 
 
-// setTimeout(hello,4000) // the 2000 is miliseconds which is equal to 2 sec and when we go to the console it will execute the output on console after 2 secpnd
-
-// setTimeout(()=>{
-// console.log("hello ismail")
-// },2000)
-
-
-// console.log("1")
-// setTimeout(()=>{
-//     console.log("2")
-// },2000)
-// console.log("3")
-
-//callback
-
-// let sum = (a,b)=>{
-// console.log(a+b)
-// }
-
-// let calculator =(a,b,sumCallback)=>{
-// sumCallback(a,b)
-// }
-// calculator(1,5,sum)
+// const getPromise =()=>{
+//     return new Promise((resolve, reject) => {
+//         console.log("i am promise")
+//        // resolve("sucess")
+//        reject("rejected")
+//     })
+//  }
 
 
-// const multiply=(a,b)=>{
-//     console.log(a*b)
-// }
-// const cal=(a,b,multiply)=>{
-// console.log(a,b)
-// }
-// multiply(4,5,multiply)
+// let promise = getPromise();
+// promise.catch((err)=>{
+//     console.log("this will not runs ",err)
+// })
 
-//asynchronus is also a call back because the functions use callback to execute the entire function
-
-// const hello =()=>{
-//      console.log("hello")
-// }
-// setTimeout(hello,5000)
+const getPromise=()=>{
+    return new Promise((resolve,reject)=>{
+        console.log("i am promise")
+        resolve("no errors")
+    }
+)}
+let promise = getPromise();
+promise.then((res)=>{
+console.log("runs sucessfully",res)
+})
