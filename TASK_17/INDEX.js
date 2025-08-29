@@ -1,23 +1,58 @@
-// closures in loop
 
-/*for (let i = 1; i <= 3; i++) {
-  setTimeout(function() {
-    console.log("i =", i);
-  }, 2000);
-}*/
+// 1. practice problem 
 
-/*for(var i = 0; i< 4; i++){
-    setTimeout(() => {
-        console.log("i = "+i)
-    }, 2000);
-}*/
+/*let score =0;
+function increasescore(points){
+    score+=points;
+    console.log(`+${points} pts`);
+
+}
 
 
-//const could'nt change
+function decreasescore(points){
+    score-=points;
+    console.log(`-${points} pts`);
 
-/*for(const x =0; x<5; x++){
-    setTimeout(() => {
-        console.log("x = "+x)
-    }, 2000);
-}*/
+}
+function getscore(){
+    return score;
+}
+increasescore(5);
+increasescore(7)
+decreasescore(9);
+decreasescore(5)
 
+console.log(`the final score is ${getscore()} pts`)*/
+
+
+// 2. practice problem
+
+
+
+/*function multiply(n){
+let multiplyer = n;
+function second(x){
+    console.log(x*n);
+    
+}
+second(5);
+
+}
+multiply(6);*/
+
+
+// leetcode problem
+
+function createcounter(){
+    let count = 0;
+
+    function increment(){
+        count++;
+        console.log(`count increased to ${count}`)
+    }
+    return {increment}
+}
+const counter = createcounter()
+counter.increment()
+counter.increment()
+counter.increment()
