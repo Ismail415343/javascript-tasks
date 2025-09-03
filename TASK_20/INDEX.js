@@ -69,7 +69,7 @@ let d1 = new dog()
 d1.speak()*/
 
 
-// super 
+// super keyword is use to call parent class method or constructors
 
 class animal{
 constructor(name){
@@ -82,7 +82,7 @@ class dog extends animal{
         this.breed = breed
     }
     display(){
-        console.log(`${this.name} is a ${this.breed}`)
+        console.log(`${this.name} is a ${this.breed} breed dog`)
     }
 }
 const d1 = new dog("boozo", "husky")
