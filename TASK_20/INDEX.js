@@ -1,36 +1,24 @@
 // Class Declaration
 
-class car{
-    constructor(brand,model){
-        this.brand=brand;
-        this.model=model;
-    }
-getdetails(){
-    console.log(`${this.brand} ${this.model}`)  ;
-}
+// class car{
+//     constructor(brand,model){
+//         this.brand=brand;
+//         this.model=model;
+//     }
+// getdetails(){
+//     console.log(`${this.brand} ${this.model}`)  ;
+// }
 
-}
-let c1 = new car("toyota",2009)
-let c2 = new car ("toyota",1998)
-c1.getdetails()
-c2.getdetails()
-
-
+// }
+// let c1 = new car("toyota",2009)
+// let c2 = new car ("toyota",1998)
+// c1.getdetails()
+// c2.getdetails()
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-//class simple
+//class simple with constructor
 
 // class Product{
 //     constructor(name,price){
