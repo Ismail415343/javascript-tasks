@@ -1,33 +1,47 @@
-// encapsulation with getter setter 
+//– Private Fields & Practical Task
 
-class person{
-    constructor(name,age){
-this._name = name;
-this._age=age
+/*class bankacc{
+    #balance=90;
+    deposit(amount){
+this.#balance +=amount; 
+    }
+get balance (){
+    return this.#balance;
+}
+}
+let acc = new bankacc()
+acc.deposit(190);
+console.log(acc.balance)*/
+
+class bankacc{
+    #balance;
+    constructor(initialbalance = 0){
+this.#balance=initialbalance;
     }
 
-
-get name (){
-    return this._name;
+deposit(amount){
+if(amount>0){
+    this.#balance+=amount
+    console.log(`deposit: $${amount}`)
+} else{
+    console.log("deposit amount must be positive")
 }
-set name (n){
-this._name =n;
 }
-
-get age(){
-    return this._age;
-}
-set age(value){
-this._age=value
-}
-getdetails(){
-    return`${this.name} is ${this.age} years old`
+withdrawl(amount){
+if(amount > 0 && amount <= this.balance){
+    this.#balance  -= amount
+    console.log(`withdrawl $${amount}`)
+} else{
+    console.log("Insufficient balance or invalid amount!");
 }
 }
 
-let p1 = new person("ismail",19)
-console.log(p1.getdetails())
-p1.name="musa"
-console.log(p1.getdetails())
-p1.age= 30;
-console.log(p1.getdetails())
+get balance(){
+   return this.#balance
+}
+}
+let acc = new bankacc();
+acc.deposit(80);
+console.log("balance after deposit is ",acc.balance);
+acc.withdrawl(56)
+console.log("balance after withdrawl is ",acc.balance);
