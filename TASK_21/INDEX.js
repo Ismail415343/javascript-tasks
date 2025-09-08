@@ -1,27 +1,33 @@
-//inheritance & super()
+// static keyword with static school name 
+// when we have the one property same for all we use static
 
-/*class animal{
-    constructor(name){
-this.name= name;
+/*class student{
+    static schoolname = "karachi grammer school";
+
+    constructor(name,age,grade){
+this.name=name;
+this.age=age;
+this.grade= grade
     }
-     speak(){
-return `${this.name} make a sound`
-    }
-}
-class dog extends animal{
-    constructor(name,breed){
-        super(name);
-        this.breed=breed
-    }
-    speak(){
-        return `${this.name} dog breed is ${this.breed}, and all dogs bark`
+    getstudentdetails(){
+        return `${this.name} is ${this.age} years old and he studied in ${this.grade} grade of ${student.schoolname} `
     }
 }
 
-const a1 = new animal("all animals");
-console.log(a1.speak())
+const s1 = new student("ali",23,8)
+const s2 = new student("haider", 19,6)
+console.log(s1.getstudentdetails());
+console.log(s2.getstudentdetails());*/
 
-const d1 = new dog("boozo","husky")
-console.log(d1.speak())*/
+
+// static method 
+// we can simply call static method without making object
+
+/*class Maths{
+    static add(a,b){
+        return a+b;
+    }
+}
+console.log("the sum of two numbers is",Maths.add(5+5,5))*/
 
 
