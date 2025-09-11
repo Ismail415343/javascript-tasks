@@ -1,51 +1,68 @@
-//prototype 
+//2. Inheritance with Prototype
 
-/*let myName = "    ismail"
-console.log(myName.length);*/
-
-/*let myName = "ismail       "
-console.log(myName.trim().length);*/
-
-
-// let heros = ["thor","spiderman"]
-// let powers = {
-//     thor: "hammer",
-//     spiderman:"sling",
-//     herospower: function(){
-//         console.log(`spider man power is ${this.spiderman}`);
-        
-
-
-//     }
+// function ANIMAL(name){
+// this.name=name;
 // }
-// console.log(heros[0])
+// ANIMAL.prototype.speak=function(){
+//     console.log(this.name +" makes a sound");
+// }
+
+// function dog(name){
+//     ANIMAL.call(this,name)
+// }
+// dog.prototype = Object.create(ANIMAL.prototype)
+// dog.prototype.constructor = dog;
+
+// dog.prototype.speak = function(){
+// console.log(this.name," barks");
+// }
 
 
-//Example 1
+// let d1 = new ANIMAL("buddy")
+// d1.speak()
 
-/*function person (name){
-   this.name=name
-}
-person.prototype.hello=function(){
-    console.log("hello my name is", this.name);
+
+// function person(name,age){
+//     this.name=name;
+//     this.age=age;
+// }
+// person.prototype.method=function(){
+//     console.log(this.name + "is "+ this.age +" years old");   
+// }
+// function employee(name,age,salary){
+//     person.call(this,name,age);
+//     this.salary=salary;
+// }
+// employee.prototype = Object.create(person.prototype)
+// employee.prototype.constructor=employee;
+
+// employee.prototype.method=function (){
+// console.log(`the name of the person is${this.name}, he is ${this.age} years old and his salary is ${this.salary}$`);
+
+// }
+// let p1 = new employee("ismail",19, 1000)
+// p1.method()
+
+
+// 3.Relation to ES6 Classes
+
+/*class animal{
+    constructor(name){
+        this.name=name
+    }
+speak(){
+    console.log(this.name,"makes a sound");
     
 }
-let p1 = new person("ali")
-let p2 = new person("ismail")
-
-p1.hello()
-p2.hello()*/
-
-
-function students(name,age){
-    this.name = name;
-    this.age = age;
 }
-students.prototype.sayhello=function(){
-    console.log(`hello my name is ${this.name} ans my age is ${this.age}`);
+class dog extends animal{
+   speak(){
+    console.log(this.name,"barks");
     
+   }
+
 }
-const s1 = new students ("ali",22)
-const s2 = new students("haider",19)
-s1.sayhello();
-s2.sayhello()
+let dp = new animal("boozo")
+let op = new dog("boozo")
+dp.speak()
+op.speak()*/
