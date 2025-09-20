@@ -117,9 +117,18 @@ function total(){
     }
     return sum
 }
-addItem(1, 3); 
+addItem(1, 5); 
 addItem(5, 1);   
 removeItem(1, 2); 
 console.log("Cart:", cart);    
 console.log("Store:", store); 
 console.log("Total Price = $" + total());
+
+
+
+//Here m = number of items in the cart (the shopping cart size).
+//And n = number of items in the store (the product list size)
+
+//Time Complexity: addItem = O(n+m), removeItem = O(m), total = O(m)
+
+//Space Complexity: addItem/total = O(1), removeItem = O(m)
