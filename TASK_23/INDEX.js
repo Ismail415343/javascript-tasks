@@ -1,22 +1,46 @@
 //ARRAY MANIPULATION
 
-let processScore = (score) =>{
+let array = [70, 85, 60, 90, 75, 60, 85]
 
-    const uniquescore = [...new Set(score)]
-    const highestscore = Math.max(...uniquescore)
+// remove duplicate
 
-    const sortedscore = uniquescore.sort((a,b)=>b-a)
-
-    return{
-        uniquescore,
-        highestscore,
-        sortedscore
-        
-    }
-
+function removeDuplicate(array){
+  return array.filter ((el,index)=>array.indexOf(el)===index)
 }
-const scores = [70, 85, 60, 90, 75, 60, 85];
-console.log(processScore(scores))
+
+// finding the largest number
+
+
+function largestValue(array){
+    let largest = array[0];
+    for(let i = 0; i< array.length; i++){
+        if(array[i]>largest){
+            largest = array[i]
+        }
+
+    }
+    return largest;
+}
+let largest = largestValue(array);
+// console.log(largest);
+// console.log(removeDuplicate(array))
+
+function sortArray(array){
+    const unique = removeDuplicate(array)
+    const n = unique.length
+    for(let i = 0; i< n ; i++){
+        for(let j = 0; j<n-i-1; j++){
+            if(unique[j]<unique[j+1]){
+                [unique[j],unique[j+1]] = [unique[j+1],unique[j]]
+            }
+        }
+    }
+    return unique;
+}
+
+console.log(largest);
+console.log(removeDuplicate(array))
+console.log(sortArray(array))
 
 //Removing duplicates with Set: takes O(n) time because each element is inserted once, and extra space O(n) for the new array.
 //Finding the highest score: takes O(n) because we check each element once.
