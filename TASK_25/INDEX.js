@@ -69,4 +69,20 @@ console.log("Failures:", listFailures(students));
 //Time: O(n) (linear in number of students).
 //Space: O(n) in worst case (if all students are failures).
 
+let array = [2,7,11,15]
+const findTarget=(array,target)=>{
 
+for(let i= 0; i<array.length; i++){
+    for(let j= 0; j<array.length; j++){
+        if(array[i]+array[j]===target){
+            return [i+1,j+1]
+        }
+    }
+}
+
+}
+console.log(findTarget(array,9))
+
+
+//time complexity: o(n²) because of nested loop
+//space complexity : 0(1) no extra storage
