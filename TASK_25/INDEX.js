@@ -69,6 +69,9 @@ console.log("Failures:", listFailures(students));
 //Time: O(n) (linear in number of students).
 //Space: O(n) in worst case (if all students are failures).
 
+
+// leetcode problem
+
 let array = [2,7,11,15]
 const findTarget=(array,target)=>{
 
