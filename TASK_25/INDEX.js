@@ -17,18 +17,31 @@ function findAvg(marks){
     return sum/value.length;
 }
 
-
-
 let assignGrades=(students)=>{
 
 for(let i=0;i<students.length;i++){
     let avg = findAvg(students[i].marks);
 
- if (avg >= 90) console.log(students[i].name,"Grade: A");
-   else if (avg >= 80) console.log(students[i].name,"Grade: B");
-else if (avg >= 70) console.log(students[i].name,"Grade: C");
-  else if (avg >= 60) console.log(students[i].name,"Grade: D");
- else if(avg<=50) console.log(students[i].name,"Grade: F");
+ if (avg >= 90) {
+    students[i].grade="GRADE A";
+    console.log(students[i].name, "GRADE A")
+ }
+   else if (avg >= 80){
+    students[i].grade="GRADE B";
+    console.log(students[i].name,"GRADE B")
+   }
+      else if (avg >= 70){
+    students[i].grade="GRADE C";
+    console.log(students[i].name,"GRADE C")
+   }
+   else if (avg >= 60){
+    students[i].grade="GRADE D";
+    console.log(students[i].name,"GRADE D")
+   }
+
+ else {
+    console.log(students[i].name,"Grade: F");
+ }
     }
     return students;
 }
@@ -36,15 +49,16 @@ else if (avg >= 70) console.log(students[i].name,"Grade: C");
 
 let findTopper=(students)=>{
     let topper = students[0]
+let topperAvg = findAvg(topper.marks);
 
     for(let i=0; i<students.length;i++){
-        if(findAvg(students[i].marks)>findAvg(topper.marks)){
+     let avg = findAvg(students[i].marks);
+      if(avg>topperAvg){
             topper = students[i]
         }
     }
     return topper;
 }
-
 
 
 let listFailures=(students)=>{
@@ -60,10 +74,14 @@ let listFailures=(students)=>{
 
 assignGrades(students);
 
-console.log("All Students with Grades:",students);
-console.log("Topper:", findTopper(students));
-console.log("Failures:", listFailures(students));
-
+// console.log("All Students with Grades:",students);
+ console.log("Topper:", findTopper(students));
+ console.log("Failures:", listFailures(students));
+console.table(students.map(s => ({
+    Name: s.name,
+    Average: findAvg(s.marks),
+    Grade: s.grade
+})));
 
 
 //Time: O(n) (linear in number of students).
