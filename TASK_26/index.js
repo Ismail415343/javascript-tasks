@@ -43,6 +43,9 @@ function richCustomer(){
     } else if(accounts[2].balance> accounts[1].balance){
         console.log(`${accounts[2].name} is the richest customer`)
     }
+    else{
+        console.log("ewual balance")
+    }
 }
 
 
@@ -57,3 +60,36 @@ withdrawl(0,500)
 console.log(accounts[0])
 total();
 richCustomer();
+
+// leetcode
+
+let longestString=(str)=>{
+    let max = 0;
+    for(let i = 0;i < str.length; i++){
+        let array = []
+        let length = 0;
+        for(let j= 0; j< str.length;j++){
+            let c = str[j];
+            let repeat = false;
+            for(let k = 0; k<str.length;k++){
+                if(array[k]===c){
+                    repeat = true;
+                    break;
+                }
+            }
+            if(repeat){
+                break;
+            }
+            array.push(c);
+            length++;
+
+            if(length>max){
+                max = length;
+            }
+        }
+    }
+    return max;
+}
+console.log(longestString("abcabcbb"));
+console.log(longestString("bbbbb"));
+console.log(longestString("pwwkew"));
