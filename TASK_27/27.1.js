@@ -45,3 +45,10 @@ console.log("error"+ err)
 }
 }
 expAlbum()
+
+
+
+//The code checks every album against every photo, so the time is O(n²).
+//This means if data doubles, the work grows much faster than double.
+//All albums and photos are stored in memory, so space is O(n).
+//Memory grows directly with the number of albums and photos.
