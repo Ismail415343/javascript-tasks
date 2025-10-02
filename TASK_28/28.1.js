@@ -1,3 +1,9 @@
+    Eve
+async function main() {
+  try {
+    let res = await fetch("https://jsonplaceholder.typicode.com/users");
+    let users = await res.json();
+
 let events = [
     {id:1,name:"tech summit",price: 500, seats:50, totalRevenue:0},
     {id:2,name:"music fest",price: 500, seats:50, totalRevenue:0},
@@ -68,10 +74,7 @@ let soldOutEvent = events.filter(e=>e.seats===0).map(e=>e.name)
     console.log(`\nSold Out Events: ${soldOutEvent.join(", ") || "None"}`);
 
 }
-async function main() {
-  try {
-    let res = await fetch("https://jsonplaceholder.typicode.com/users");
-    let users = await res.json();
+
 
     bookTicket(users[0], 1,4);
     bookTicket(users[1], 2,3); 
@@ -84,3 +87,5 @@ async function main() {
   }
 }
 main()
+
+
