@@ -73,13 +73,10 @@ async function main() {
     let res = await fetch("https://jsonplaceholder.typicode.com/users");
     let users = await res.json();
 
-  
     bookTicket(users[0], 1,4);
     bookTicket(users[1], 2,3); 
     bookTicket(users[2], 3,1);
     bookTicket(users[2], 3,5); 
-
-    // Print summary
     printSummary(users);
 
   } catch (err) {
