@@ -7,27 +7,36 @@ try{
     const photos = await photoRes.json()
 
 
+    if(!albums.length || !photos.length){
+    console.log('no dat aavailable')
+    return;
+}
+
+const photoMap = {};
+for(const photo of photos){
+    if(!photoMap[photo.albumId] ){
+        photoMap[photo.albumId]=[];
+    }
+    photoMap[photo.albumId].push(photo)
+
+}
+
+
     const albumWithPhotos = []
     for(let i = 0; i<albums.length; i++){
         const album = albums[i];
-        const relatedPhotos = [];
-    for(let j =0; j<photos.length;j++){
-        if(photos[j].albumId===album.id){
-            relatedPhotos[relatedPhotos.length]= photos[j];
-        }
+    const relatedPhotos = photoMap[album.id]||[];
+    albumWithPhotos.push({ id: album.id, title: album.title, photos: relatedPhotos });
+
     }
-    
-    albumWithPhotos[albumWithPhotos.length]={
-        id:album.id,
-        title:album.title,
-        photos:relatedPhotos
-    }
-    
-    }
-for(let i=0; i<albumWithPhotos.length; i++){
-    const album = albumWithPhotos[i];
-    console.log("album", album.title + "-->" + album.photos.length+ "photos")
+
+
+    for(let i =0; i<albumWithPhotos.length;i++){
+        const album = albumWithPhotos[i];
+        console.log(`album : ${album.title} --> ${album.photos.length} photos`)
 }
+
+
 
 let maxAlbum = albumWithPhotos[0];
 for(let i=1; i<albumWithPhotos.length;i++){
@@ -37,8 +46,7 @@ for(let i=1; i<albumWithPhotos.length;i++){
 
     }
 }
-
-console.log("album with most photos"+ maxAlbum.title + "photos " + maxAlbum.photos.length)
+console.log(`\n album with max photos : ${maxAlbum.title} (${maxAlbum.photos.length})`);
 
 } catch(err){
 console.log("error"+ err)
@@ -48,7 +56,6 @@ expAlbum()
 
 
 
-//The code checks every album against every photo, so the time is O(n²).
-//This means if data doubles, the work grows much faster than double.
-//All albums and photos are stored in memory, so space is O(n).
-//Memory grows directly with the number of albums and photos.
+// Space Complexity: O(n + m)
+// We store all albums, all photos, and the photoMap in memory.
+// Memory grows directly with the number of albums and photos.
