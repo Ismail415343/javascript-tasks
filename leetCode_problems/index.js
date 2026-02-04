@@ -28,7 +28,7 @@ let longestCharacterLength =(s)=>{
             if (visited.includes(s[j])) {
                 break;
             }
-              visited += s[j];
+              visited += s[j]; 
 
             if (visited.length > maxLength) {
                 maxLength = visited.length;
